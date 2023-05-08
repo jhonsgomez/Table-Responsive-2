@@ -1,0 +1,269 @@
+/* ========== GOOGLE FONTS ========== */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+/* ========== VARIABLES CSS ========== */
+
+:root {
+    /* ========== DISPLAYS ========== */
+    --row-buttons-display: flex;
+    --row-home-display: flex;
+    --row-logout-display: flex;
+    --row-add-display: static;
+
+    /* ========== FONTS ========== */
+    --body-font: "Montserrat", sans-serif;
+
+    /* ========== COLORS ========== */
+    --color-principal: 73, 0, 120; /* Blue: 27, 30, 123; Green: 0, 100, 18; Red: 210, 0, 0; Orange: 210, 80, 0; */
+    --color-secondary: 255, 255, 255;
+
+    --table-color-delete: 210, 0, 0;
+    --table-color-edit: 0, 3, 173;
+
+    /* ========== SIZE AND WEIGHTS ========== */
+    --btn-size-general: 1.5rem;
+    --btn-size-logout: 0.875rem;
+    --btn-size-add: 1.125rem;
+
+    --table-size-thead: 1.125rem;
+    --table-size-tbody: 0.875rem;
+    --table-weight-thead: 500;
+    --table-weight-tbody: 500;
+
+    /* ========== WIDTH AND HEIGHTS ========== */
+    --max-width-general: 1200px;
+    --min-width-table: 1000px;
+}
+
+/* ========== BODY ========== */
+
+body {
+    font-family: var(--body-font);
+    min-height: 100vh;
+}
+
+/* ========== CONTAINER ========== */
+
+.container__table {
+    padding: 35px 70px;
+    min-height: 100vh;
+    background: rgb(var(--color-secondary));
+}
+
+/* ========== BUTTONS -> TOP ========== */
+
+.container__table .row__buttons {
+    display: var(--row-buttons-display);
+    max-width: var(--max-width-general);
+    margin: 0 auto 20px auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__table .row__buttons .col {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.container__table .row__buttons .col__btn-home {
+    display: var(--row-home-display);
+    justify-content: flex-start;
+}
+
+.container__table .row__buttons .col__btn-home .btn__home {
+    color: rgb(var(--color-principal));
+    font-size: var(--btn-size-general);
+    transition: 0.3s;
+}
+
+.container__table .row__buttons .col__btn-home .btn__home:hover {
+    color: rgba(var(--color-principal), 0.75);
+}
+
+.container__table .row__buttons .col__btn-logout {
+    display: var(--row-logout-display);
+    justify-content: flex-end;
+}
+
+.container__table .row__buttons .col__btn-logout .btn__logout {
+    padding: 8px 25px;
+    background: rgb(var(--color-principal));
+    border: none;
+    color: rgb(var(--color-secondary));
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: var(--btn-size-logout);
+}
+
+.container__table .row__buttons .col__btn-logout .btn__logout:hover {
+    background: rgba(var(--color-principal), 0.83);
+    color: rgb(var(--color-secondary));
+}
+
+/* ========== HEADING ========== */
+
+.container__table .row__heading {
+    max-width: var(--max-width-general);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__table .row__heading .col__heading-title {
+    text-align: center;
+}
+
+.container__table .row__heading .col__heading-title .heading__title {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+/* ========== BUTTONS -> HEADING ========== */
+
+.container__table .row__heading .col__heading-buttons {
+    padding: 0;
+    margin: 1rem 0 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__table .row__heading .col__heading-buttons .btn__add {
+    display: var(--row-add-display);
+    padding: 8px 25px;
+    background: rgb(var(--color-principal));
+    color: rgb(var(--color-secondary));
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: var(--btn-size-add);
+}
+
+.container__table .row__heading .col__heading-buttons .btn__add i {
+    color: rgb(var(--color-secondary));
+}
+
+.container__table .row__heading .col__heading-buttons .btn__add:hover {
+    background: rgba(var(--color-principal), 0.83);
+    color: rgb(var(--color-secondary));
+}
+
+/* ========== TABLE ========== */
+
+.container__table .row__table {
+    max-width: var(--max-width-general);
+    margin: auto;
+}
+
+.container__table .row__table .table__wrap {
+    overflow-x: scroll;
+}
+
+.container__table .row__table .table__wrap .table {
+    min-width: var(--min-width-table);
+    max-width: var(--max-width-general);
+    width: 100%;
+    margin: auto;
+    background: rgb(var(--color-secondary));
+    text-align: center;
+}
+
+.container__table .row__table .table__wrap .table .thead__primary {
+    background: rgb(var(--color-principal));
+}
+
+.container__table .row__table .table__wrap .table .thead__primary th {
+    padding: 20px;
+    border: none;
+    color: rgb(var(--color-secondary));
+    font-size: var(--table-size-thead);
+    font-weight: var(--table-weight-thead);
+}
+
+.container__table .row__table .table__wrap .table tbody tr {
+    margin-bottom: 10px;
+}
+
+.container__table .row__table .table__wrap .table tbody th,
+.container__table .row__table .table__wrap .table tbody td {
+    padding: 20px;
+    background: rgb(var(--color-secondary));
+    border: none;
+    border-bottom: 2px solid rgba(var(--color-principal), 0.2);
+    vertical-align: middle;
+    font-size: var(--table-size-tbody);
+    font-weight: var(--table-weight-tbody);
+}
+
+.container__table .row__table .table__wrap .table tbody .scope {
+    background: rgba(var(--color-principal), 0.2);
+    border-bottom: 2px solid rgba(var(--color-principal), 0.2);
+}
+
+.container__table .row__table .table__wrap .table tbody td:nth-child(odd) {
+    background: rgba(var(--color-principal), 0.2);
+    border-bottom: 2px solid rgba(var(--color-principal), 0.2);
+}
+
+/* ========== BUTTONS -> TABLE ========== */
+
+.container__table .row__table .table__wrap .table .table__buttons {
+    font-size: var(--btn-size-general);
+}
+
+.container__table .row__table .table__wrap .table .table__buttons .btn__edit {
+    margin: 5px;
+    color: rgb(var(--table-color-edit));
+    transition: 0.3s;
+}
+
+.container__table .row__table .table__wrap .table .table__buttons .btn__edit:hover {
+    color: rgba(var(--table-color-edit), 0.75);
+}
+
+.container__table .row__table .table__wrap .table .table__buttons .btn__delete {
+    margin: 5px;
+    color: rgb(var(--table-color-delete));
+    transition: 0.3s;
+}
+
+.container__table .row__table .table__wrap .table .table__buttons .btn__delete:hover {
+    color: rgba(var(--table-color-delete), 0.75);
+}
+
+/* ========== MEDIA QUERYS ========== */
+
+@media screen and (max-width: 576px) {
+    .container__table {
+        padding: 40px 50px;
+    }
+
+    .container__table .row__buttons .col {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container__table .row__buttons .col span {
+        display: none;
+    }
+
+    .container__table .row__buttons .col__btn-logout .btn__logout {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: rgb(var(--color-principal));
+        font-size: var(--btn-size-general);
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .container__table .row__heading .col__heading-buttons .btn__add span {
+        display: none;
+    }
+}
